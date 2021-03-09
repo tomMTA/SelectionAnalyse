@@ -73,23 +73,32 @@ int main()
 		else
 		{
 			Person person = RandSelection(people1, num, selection, numComp, numItrToRandSelect);
+			cout << "RandSelection: ";
 			person.show();
-			cout << "RandSelection: " << endl
+			cout
 				<< "  Key comparisons: " << numComp << endl
 				<< "  Iterations to find: " << numItrToRandSelect << endl;
 			numComp = 0;
 
 			person = selectHeap(people2, num, selection, numComp, numItrToBuildHeap, numItrToSelectInHeap);
 
-			cout << "selectHeap: " << endl << "  Key comparisons: " << numComp << endl
+			cout << "selectHeap: ";
+			person.show();
+			cout
+				<< "  Key comparisons: " << numComp << endl
 				<< "  Iterations to build: " << numItrToBuildHeap << endl
-				<< "  Iterations to find: " << numItrToSelectInHeap << endl;
+				<< "  Iterations to find: " << numItrToSelectInHeap << endl
+				<< "  Total iterations: " << numItrToBuildHeap + numItrToSelectInHeap << endl;
 			numComp = 0;
 
 			person = BST(people3, num, selection, numComp, numItrToBuildTree, numItrToSelectInTree);
-			cout << "BST: " << endl << "  Key comparisons: " << numComp << endl
+			cout << "BST: ";
+			person.show();
+			cout
+				<< "  Key comparisons: " << numComp << endl
 				<< "  Iterations to build: " << numItrToBuildTree << endl
-				<< "  Iterations to find: " << numItrToSelectInTree << endl;
+				<< "  Iterations to find: " << numItrToSelectInTree << endl
+				<< "  Total iterations: " << numItrToBuildTree + numItrToSelectInTree << endl;
 			numComp = 0;
 		}
 		for (int i = 0; i < num; i++)
